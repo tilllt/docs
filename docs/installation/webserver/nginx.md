@@ -109,3 +109,7 @@ your PHP-FPM configuration's `listen = `, e.g.:
 ```
 fastcgi_pass unix:/path/to/php-fpm/socket.sock;
 ```
+
+**Note:** Uploads failing 
+
+There is a default setting limiting the http upload payload to 1mb, by the "client_max_body_size" directive. If thats not enough for your purpose, you might want to add "client_max_body_size 1000M;" to the http, server or location block in your nginx config.
